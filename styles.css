@@ -18,20 +18,20 @@ body {
     align-items: center;
 }
 
-/* Product Card Styling */
-.product-card {
+/* Product Card Styling (Now also includes class .product for testing) */
+.product-card, .product {
     display: flex;
     width: 900px; /* Overall width */
     height: 550px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Ensures contained elements are clipped */
+    overflow: hidden; 
 }
 
 /* --- Left Side: Product Photo Section --- */
 .product__photo {
-    flex: 0 0 50%; /* Takes exactly 50% of the card width */
+    flex: 0 0 50%; 
     background-color: #f7f7f7;
     display: flex;
     justify-content: center;
@@ -45,12 +45,12 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative; /* For icon positioning */
+    position: relative; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px; /* Space for the leaf and main image */
+    padding-top: 50px; 
 }
 
 .icons {
@@ -76,7 +76,7 @@ body {
 
 /* Main Photo */
 .photo-main {
-    flex-grow: 1; /* Allows main image area to expand */
+    flex-grow: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ body {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transform: scale(1.1); /* Slightly zoom the image as in the preview */
+    transform: scale(1.1); 
 }
 
 /* Photo Album (Thumbnails) */
@@ -125,7 +125,7 @@ body {
 
 /* --- Right Side: Product Info/Details Section --- */
 .product__info {
-    flex: 1; /* Takes the other 50% */
+    flex: 1; 
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -149,7 +149,7 @@ body {
 /* Price Section */
 .price {
     margin: 30px 0;
-    color: #e62e4a; /* Red color for price */
+    color: #e62e4a; 
     font-weight: 700;
 }
 
@@ -164,7 +164,7 @@ body {
     line-height: 1;
 }
 
-/* Varieties/Color Selector */
+/* Varieties/Color Selector - STYLES ADJUSTED FOR UL/LI/IMG STRUCTURE */
 .variant {
     margin-bottom: 30px;
 }
@@ -176,31 +176,38 @@ body {
     font-weight: 400;
 }
 
-.colors {
+.variant .colors {
+    list-style: none;
     display: flex;
     gap: 15px;
 }
 
-.color {
+.variant .colors li {
+    padding: 0;
+}
+
+.variant .colors img {
+    /* Styles applied to the image element */
     width: 30px;
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s;
+    object-fit: cover; /* Ensure image fits if using small thumbnails */
 }
 
-.color.selected {
+/* Styling the image based on its class (color) */
+.variant .colors .green { background-color: #8cc63f; }
+.variant .colors .yellow { background-color: #f7da21; }
+.variant .colors .orange { background-color: #ff6600; }
+.variant .colors .red { background-color: #cc3333; }
+
+/* Styling the selected image */
+.variant .colors .selected {
     border-color: #333;
     transform: scale(1.1);
 }
-
-/* Specific color codes based on the image */
-.color.green { background-color: #8cc63f; }
-.color.yellow { background-color: #f7da21; }
-.color.orange { background-color: #ff6600; }
-.color.red { background-color: #cc3333; }
-
 
 /* Benefits/Description Section */
 .description h3 {
@@ -225,17 +232,17 @@ body {
 }
 
 .description ul li::before {
-    content: '•'; /* Simple bullet point */
+    content: '•'; 
     position: absolute;
     left: 0;
-    color: #55c76c; /* Green checkmark color */
+    color: #55c76c; 
     font-size: 1.2em;
     top: -2px;
 }
 
 /* ADD TO CART Button */
 .add-to-cart-btn {
-    background-color: #e62e4a; /* Red button */
+    background-color: #e62e4a; 
     color: white;
     font-size: 1em;
     font-weight: 700;
@@ -245,7 +252,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s;
-    align-self: flex-start; /* Aligns to the start of the flex container */
+    align-self: flex-start; 
 }
 
 .add-to-cart-btn:hover {
